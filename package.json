@@ -1,0 +1,73 @@
+{
+  "name": "spectra-ui",
+  "version": "0.1.0",
+  "homepage": "https://dannysmc.com/spectra-ui",
+  "description": "Rewyre UI is a component library built in Vue 3 and TypeScript.",
+  "author": {
+    "name": "Danny SMc",
+    "email": "danny.smc95@gmail.com",
+    "url": "https://dannysmc.com"
+  },
+  "typings": "./src/index.ts",
+  "main": "./dist/spectra-ui.umd.js",
+  "module": "./dist/spectra-ui.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/spectra-ui.es.js",
+      "require": "./dist/spectra-ui.umd.js"
+    }
+  },
+  "unpkg": "dist/spectra-ui.umd.min.js",
+  "private": false,
+  "license": "MIT",
+  "bugs": "https://github.com/dannysmc95/spectra-ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dannysmc95/spectra-ui"
+  },
+  "keywords": [
+    "spectra",
+    "spectra-ui",
+    "vue",
+    "vue3",
+    "vuejs",
+    "typescript",
+    "vue-components",
+    "ui",
+    "framework"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src/**/*.{ts,vue} docs/src/**/*.{ts,vue}"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/plugin-transform-typescript": "^7.11.0",
+    "@babel/preset-env": "^7.11.5",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "@vitejs/plugin-vue": "^1.1.0",
+    "@vue/babel-preset-app": "^4.5.6",
+    "@vue/babel-preset-jsx": "^1.1.2",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "babel-plugin-pure-calls-annotation": "^0.3.1",
+    "babel-plugin-typescript-iife-enum": "^0.2.1",
+    "core-js": "^3.6.5",
+    "eslint": "^7.20.0",
+    "eslint-plugin-vue": "^7.6.0",
+    "sass": "^1.32.8",
+    "typescript": "^4.1.5",
+    "vite": "^2.0.0-beta.40",
+    "vue-eslint-parser": "^7.5.0"
+  },
+  "dependencies": {
+    "vue": "^3.0.5",
+    "vue-class-component": "^8.0.0-rc.1"
+  }
+}
