@@ -82,4 +82,4 @@ ThemeEngine.setCacheMethods({
 ThemeEngine.cache();
 ```
 
-> If you ever need to rebuild the cache, for development or testing purposes (we suggest you don't cache, but for production apps this may be required) you can call the `rebuild()` method, which can be hooked to a button somewhere on the front-end.
+> If you ever need to rebuild the cache, for development or testing purposes (we suggest you don't cache in development, but for production apps this may be required) you can call the `rebuild()` method, which can be hooked to a button somewhere on the front-end.

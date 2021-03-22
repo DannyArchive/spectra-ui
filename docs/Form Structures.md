@@ -18,8 +18,8 @@ In our example we shall create a standard registration form.
 
 ```html
 <s-form @submit="onSubmit">
-	<s-input label="Name" validate="name" />
-	<s-input label="Email" validate="email" />
+	<s-text-field label="Name" validate="name" />
+	<s-text-field label="Email" validate="email" />
 	<s-date label="Date of Birth" validate="" />
 	<s-button colour="secondary" type="submit">Register</s-button>
 </s-form>

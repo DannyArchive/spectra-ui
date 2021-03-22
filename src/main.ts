@@ -1,9 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import RewyreUI, { ThemeEngine } from './index';
-
-ThemeEngine.setTheme({});
+import SpectraUI from './index';
 
 createApp(App)
-	.use(RewyreUI)
+	.use(SpectraUI)
 	.mount('#app');
