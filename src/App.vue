@@ -1,7 +1,11 @@
 <template>
 	<div>
 		<p>Hello, World</p>
-		<r-badge />
+
+		<!-- Form -->
+		<r-form-container>
+			<r-form-item />
+		</r-form-container>
 	</div>
 </template>
 
