@@ -2,6 +2,7 @@ import { App } from 'vue';
 
 // Import all components.
 import { Accordion, AccordionPanel, AccordionHeader, AccordionContent } from '@/components/accordion';
+import { Carousel, CarouselPanel } from '@/components/carousel';
 
 // Define the list of components.
 const components = {
@@ -9,6 +10,8 @@ const components = {
 	'accordion-panel': AccordionPanel,
 	'accordion-header': AccordionHeader,
 	'accordion-content': AccordionContent,
+	'carousel': Carousel,
+	'carousel-panel': CarouselPanel,
 };
 
 // Define the install method.
@@ -26,6 +29,8 @@ export {
 	AccordionPanel,
 	AccordionHeader,
 	AccordionContent,
+	Carousel,
+	CarouselPanel,
 }
 
 // Export all other modules, interfaces, etc.

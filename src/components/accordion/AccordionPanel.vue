@@ -1,53 +1,75 @@
 <template>
 	<div class="accordion-panel">
-		<div class="header" @click="handleClick" v-if="header_exists">
-			<component v-if="header !== false" :is="header" />
+
+		<!-- Accordion Error -->
+		<div class="header" v-if="!getHeader || !getContent" v-cloak>
+			<p class="error-message" v-text="!getHeader ? 'No header specified' : 'No content specified'"></p>
+		</div>
+
+		<!-- Accordion Header -->
+		<div class="header" @click="handleClick" v-if="getHeader && getContent">
+			<component :is="getHeader" />
 			<span class="icon" :class="{active: active}">&dtrif;</span>
 		</div>
-		<div class="content" v-if="active && content_exists">
-			<component v-if="content !== false" :is="content" />
+
+		<!-- Accordion Content -->
+		<div class="content-wrapper" ref="content_inner" :style="{height: getHeight}" v-if="getHeader && getContent">
+			<div class="content">
+				<component :is="getContent" />
+			</div>
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
 	import { Options, mixins } from 'vue-class-component';
-	import Slots from '@/mixins/slots';
+	import slots from '@/mixins/slots';
 
 	@Options({
 		name: 'AccordionPanel',
 		props: ['active'],
 		emits: ['toggle'],
 	})
-	export default class AccordionPanel extends mixins(Slots) {
+	export default class AccordionPanel extends mixins(slots) {
 
 		public active!: boolean;
-		public header: any = false;
-		public content: any = false;
-		public header_exists = true;
-		public content_exists = true;
+
+		public get getHeight(): string {
+			if (!this.active) return '0px';
+			return `${(this.$refs as any).content_inner.scrollHeight.toString()}px`;
+		}
+
+		public get getHeader(): any {
+			let header: any = false;
+			this.getSlots.forEach((s: any) => {
+				if (s.type.name === 'AccordionHeader') header = s;
+			});
+			return header;
+		}
+
+		public get getContent(): any {
+			let header: any = false;
+			this.getSlots.forEach((s: any) => {
+				if (s.type.name === 'AccordionContent') header = s;
+			});
+			return header;
+		}
 
 		public handleClick(): void {
 			this.$emit('toggle');
-		}
-
-		public mounted(): void {
-			this.getSlots.forEach((slot: any) => {
-				if (slot.type.name === 'AccordionHeader') this.header = slot;
-				if (slot.type.name === 'AccordionContent') this.content = slot;
-			});
-			if (this.header === false) this.header_exists = false;
-			if (this.content === false) this.content_exists = false;
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	@import '@/assets/styles/base';
+
 	.header {
 		padding: 10px 20px;
 		position: relative;
 		cursor: pointer;
 		background-color: white;
+		color: #4d4d4d;
 
 		* {
 			color: #4d4d4d;
@@ -68,12 +90,24 @@
 		}
 	}
 
-	.content {
-		padding: 10px 20px;
-		background-color: white;
+	.content-wrapper {
+		background-color: #eee;
+		height: 0;
+		overflow: hidden;
+		@include prefix(transition, all 0.5s ease-in-out);
 
-		* {
+		.content {
+			padding: 10px 20px;
+			background-color: white;
 			color: #4d4d4d;
+
+			&:deep(*) {
+				color: #4d4d4d;
+			}
 		}
+
+		// &.active {
+		// 	height: auto;
+		// }
 	}
 </style>

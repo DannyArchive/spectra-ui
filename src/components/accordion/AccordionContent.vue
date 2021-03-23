@@ -1,6 +1,6 @@
 <template>
 	<div class="accordion-content">
-		<slot />
+		<slot class="accordion-inner" />
 	</div>
 </template>
 
@@ -14,7 +14,7 @@
 </script>
 
 <style lang="scss" scoped>
-	* {
+	.accordion-inner * {
 		color: #4d4d4d;
 	}
 </style>

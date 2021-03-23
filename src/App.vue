@@ -28,6 +28,22 @@
 				</s-accordion>
 			</article>
 		</section>
+
+		<!-- Carousel -->
+		<section class="component-item">
+			<article class="component-header">
+				<h2 class="title">Carousel</h2>
+			</article>
+			<article class="component-content">
+				<s-carousel>
+					<s-carousel-panel v-for="index in 3" :key="index">
+						<div style="background-image: url(https://placehold.it/1200x600); background-repeat: no-repeat; height: 600px; background-position: 50%;">
+							<p>Some Text</p>
+						</div>
+					</s-carousel-panel>
+				</s-carousel>
+			</article>
+		</section>
 	</main>
 </template>
 
