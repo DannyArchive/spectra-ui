@@ -14,5 +14,7 @@
 </script>
 
 <style lang="scss" scoped>
-	p { color: yellow; }
+	* {
+		color: #4d4d4d;
+	}
 </style>

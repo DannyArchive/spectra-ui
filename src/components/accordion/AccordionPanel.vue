@@ -46,6 +46,12 @@
 	.header {
 		padding: 10px 20px;
 		position: relative;
+		cursor: pointer;
+		background-color: white;
+
+		* {
+			color: #4d4d4d;
+		}
 
 		.icon {
 			position: absolute;
@@ -64,5 +70,10 @@
 
 	.content {
 		padding: 10px 20px;
+		background-color: white;
+
+		* {
+			color: #4d4d4d;
+		}
 	}
 </style>

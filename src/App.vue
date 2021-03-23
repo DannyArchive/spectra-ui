@@ -18,7 +18,11 @@
 							Item {{ index }}
 						</s-accordion-header>
 						<s-accordion-content>
-							<p> Sint non non eu eiusmod aliqua cupidatat eiusmod nostrud cillum fugiat. Aute velit culpa amet sunt commodo sit ea enim. Ea et ipsum minim sint sit et minim. Ipsum in cillum in ad pariatur. Sunt qui do qui laboris pariatur ut nostrud aliquip aliqua ipsum pariatur fugiat.</p>
+							<h3>Some title here</h3>
+							<p>Anim consequat mollit ut culpa proident. Irure duis occaecat culpa veniam tempor commodo consectetur aute non amet nulla consectetur est commodo. Ullamco et do dolore quis ipsum cillum deserunt. Voluptate do ea cillum proident incididunt adipisicing do. Officia labore Lorem et veniam exercitation ullamco occaecat. Cillum commodo deserunt velit id nulla reprehenderit irure laboris tempor aliquip. Nostrud cillum ullamco eu ipsum enim excepteur ut sit eu.</p>
+							<p>Cillum magna amet laboris consequat irure cillum minim qui commodo cillum pariatur elit. Qui incididunt aliqua ex est aute amet ex magna aute ipsum reprehenderit ea. Amet et duis minim commodo elit commodo excepteur sint nostrud commodo laborum exercitation. Deserunt do Lorem mollit fugiat elit do quis occaecat est nostrud do minim eu nisi.</p>
+							<p>Ullamco ea occaecat minim exercitation esse ea. Aliquip dolore aliquip magna sunt laborum. Deserunt dolor dolore minim do minim ipsum dolore nisi elit.</p>
+							<p>Laborum non laborum velit esse elit aliquip magna adipisicing magna deserunt. Duis irure veniam sit aliquip magna tempor voluptate. Adipisicing eiusmod ex proident nostrud pariatur labore duis incididunt nulla.</p>
 						</s-accordion-content>
 					</s-accordion-panel>
 				</s-accordion>
