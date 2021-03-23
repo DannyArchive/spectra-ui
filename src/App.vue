@@ -14,12 +14,12 @@
 			<article class="component-content">
 				<s-accordion>
 					<s-accordion-panel v-for="index in 5" :key="index">
-						<template v-slot:header>
+						<s-accordion-header>
 							Item {{ index }}
-						</template>
-						<template v-slot:content>
+						</s-accordion-header>
+						<s-accordion-content>
 							<p> Sint non non eu eiusmod aliqua cupidatat eiusmod nostrud cillum fugiat. Aute velit culpa amet sunt commodo sit ea enim. Ea et ipsum minim sint sit et minim. Ipsum in cillum in ad pariatur. Sunt qui do qui laboris pariatur ut nostrud aliquip aliqua ipsum pariatur fugiat.</p>
-						</template>
+						</s-accordion-content>
 					</s-accordion-panel>
 				</s-accordion>
 			</article>

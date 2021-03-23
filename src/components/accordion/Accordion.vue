@@ -7,20 +7,15 @@
 </template>
 
 <script lang="ts">
-	import { Options, Vue } from 'vue-class-component';
+	import { mixins, Options } from 'vue-class-component';
+	import Slots from '@/mixins/slots';
 
 	@Options({
 		name: 'Accordion',
 	})
-	export default class Accordion extends Vue {
+	export default class Accordion extends mixins(Slots) {
 
 		public current_active: number | null = null;
-
-		public get getSlots(): Array<any> {
-			const items = (this.$slots as any).default()[0].children;
-			if (!items) return [];
-			return items;
-		}
 
 		public handleClick(index: number): void {
 			if (this.current_active === index) {
@@ -34,6 +29,12 @@
 			if (this.current_active) return false;
 			if (this.current_active === index) return true;
 			return false;
+		}
+
+		public mounted(): void {
+			// const slots: any = this.$slots;
+			// console.log(slots.default());
+			// console.log(this.getSlots);
 		}
 	}
 </script>

@@ -1,29 +1,43 @@
 <template>
 	<div class="accordion-panel">
-		<div class="header" @click="handleClick">
-			<slot name="header" />
+		<div class="header" @click="handleClick" v-if="header_exists">
+			<component v-if="header !== false" :is="header" />
 			<span class="icon" :class="{active: active}">&dtrif;</span>
 		</div>
-		<div class="content" v-if="active">
-			<slot name="content" />
+		<div class="content" v-if="active && content_exists">
+			<component v-if="content !== false" :is="content" />
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
-	import { Options, Vue } from 'vue-class-component';
+	import { Options, mixins } from 'vue-class-component';
+	import Slots from '@/mixins/slots';
 
 	@Options({
 		name: 'AccordionPanel',
 		props: ['active'],
 		emits: ['toggle'],
 	})
-	export default class AccordionPanel extends Vue {
+	export default class AccordionPanel extends mixins(Slots) {
 
 		public active!: boolean;
+		public header: any = false;
+		public content: any = false;
+		public header_exists = true;
+		public content_exists = true;
 
 		public handleClick(): void {
 			this.$emit('toggle');
+		}
+
+		public mounted(): void {
+			this.getSlots.forEach((slot: any) => {
+				if (slot.type.name === 'AccordionHeader') this.header = slot;
+				if (slot.type.name === 'AccordionContent') this.content = slot;
+			});
+			if (this.header === false) this.header_exists = false;
+			if (this.content === false) this.content_exists = false;
 		}
 	}
 </script>
