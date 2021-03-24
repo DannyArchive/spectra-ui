@@ -1,5 +1,7 @@
 <template>
-	<slot />
+	<div class="carousel-panel">
+		<slot />
+	</div>
 </template>
 
 <script lang="ts">

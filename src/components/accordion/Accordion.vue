@@ -30,12 +30,6 @@
 			if (this.current_active === index) return true;
 			return false;
 		}
-
-		public mounted(): void {
-			// const slots: any = this.$slots;
-			// console.log(slots.default());
-			// console.log(this.getSlots);
-		}
 	}
 </script>
 

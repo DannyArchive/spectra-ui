@@ -38,7 +38,7 @@
 				<s-carousel>
 					<s-carousel-panel v-for="index in 3" :key="index">
 						<div style="background-image: url(https://placehold.it/1200x600); background-repeat: no-repeat; height: 600px; background-position: 50%;">
-							<p>Some Text</p>
+							<p>Some Text {{ index }}</p>
 						</div>
 					</s-carousel-panel>
 				</s-carousel>
