@@ -5,9 +5,9 @@
 				<component class="carousel-inner" :style="{width: `${panel_width}px`}" v-for="(item, index) in getSlots" :is="item" :key="index"/>
 			</div>
 		</div>
-		<span class="control-item arrow-left" @click="previousPanel">&lt;</span>
-		<span class="control-item arrow-right" @click="nextPanel">&gt;</span>
-		<div class="control-status">
+		<span class="control-item arrow-left" v-if="!hide_controls" @click="previousPanel">&lt;</span>
+		<span class="control-item arrow-right" v-if="!hide_controls" @click="nextPanel">&gt;</span>
+		<div class="control-status" v-if="!hide_dots">
 			<span class="status-dot" :class="{active: (current_index + 1) === index}" v-for="index in getSlots.length" :key="index"><!-- DOT --></span>
 		</div>
 	</div>
@@ -20,12 +20,15 @@
 
 	@Options({
 		name: 'Carousel',
+		prop: ['hide_controls', 'hide_dots'],
 	})
 	export default class Carousel extends mixins(slots) {
 		public current_scroll = 0;
 		public current_index = 0;
 		public panel_width = 0;
 		public controls_locked = false;
+		public hide_controls = false;
+		public hide_dots = false;
 
 		public nextPanel(): void {
 			if (this.controls_locked) return;

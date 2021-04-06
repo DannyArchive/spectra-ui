@@ -1,6 +1,6 @@
 <p align="center">
 	<a href="#">
-		<img width="300" src="spectra-ui-text.svg">
+		<img width="300" src="https://github.com/dannysmc95/spectra-ui/blob/master/spectra-ui-text.svg">
 	</a>
 </p>
 
@@ -14,9 +14,7 @@
 	<img src="https://img.shields.io/npm/dw/spectra-ui">
 </p>
 
-<!--<p align="center">
-	<a href="#">Explore the docs</a>
-</p>-->
+> This project is still in-development, and is fairly empty still, once it goes into a version 1 release it will be stable to use, but at the moment, it has two components, and both are fairly buggy still :P.
 
 # Features
 * Hand crafted components
@@ -27,6 +25,8 @@
 * Included providers
 * Built in Fetch HTTP library wrapper
 * [Licensed under MIT](https://raw.githubusercontent.com/dannysmc95/spectra-ui/master/LICENSE)
+
+
 
 # Install
 
@@ -41,6 +41,7 @@ npm install spectra-ui --save
 # yarn
 yarn add spectra-ui
 ```
+
 
 # Usage
 
@@ -65,65 +66,6 @@ createApp
 	.use(Modal)
 	.use(TagInput);
 ```
-
-# Included Components
-
-**Base**
-* Button
-* Icon
-* Divider
-
-**Form**
-* Form Container,
-* Form Group
-* Form Item
-* Checkbox
-* Colour Picker
-* Input
-* Number Input
-* Radio
-* Select
-* Slider
-* Switch
-* Textarea
-* Toggle
-* Tag Input
-* Predictive Input
-
-**List**
-* List Container
-* List Row
-* List Column
-* List Item
-* List Filters
-* Pagination
-
-**Feedback**
-* Alert
-* Notification
-* Drawer
-* Loader
-* Progress Bar
-* Loading Bar
-* Message
-* Popover
-* Modal
-
-**Data Driven**
-* Avatar
-* Accordion
-* Badge
-* Tag
-* Tabs
-* Tooltip
-
-**Navigation**
-* Breadcrumbs
-* Dropdown
-
-# Included Directives
-* Click Outside
-* Double Click
 
 
 

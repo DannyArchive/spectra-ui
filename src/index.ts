@@ -1,4 +1,7 @@
 import { App } from 'vue';
+import { HttpProvider } from './providers/http';
+import { MiscProvider } from './providers/misc';
+import { AnimateHelper } from './helper/animate';
 
 // Import all components.
 import { Accordion, AccordionPanel, AccordionHeader, AccordionContent } from '@/components/accordion';
@@ -31,6 +34,10 @@ export {
 	AccordionContent,
 	Carousel,
 	CarouselPanel,
+
+	HttpProvider,
+	MiscProvider,
+	AnimateHelper,
 }
 
 // Export all other modules, interfaces, etc.
